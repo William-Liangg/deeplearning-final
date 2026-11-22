@@ -111,7 +111,7 @@ The untrained model scores 0.283 (3-seed mean).
 
 **Key findings**
 
-- **The three seeds agree to within 0.001.**
+- **The three seeds agree closely:** 0.6138, 0.6131 and 0.6119 (sd 0.0009).
 - **The model uses the session history.** It starts at .537 on hand 1 and climbs to .620.
   The same model limited to the current hand stays at about .544.
 - **By hands 11–20 it matches the oracle model,** which is told the style up front. Its
@@ -129,7 +129,7 @@ The untrained model scores 0.283 (3-seed mean).
 - **Current-hand-only baseline:** `pos0` (the hand restarted at position 0) is the
   recommended version, pending team confirmation. The other version (`origpos`) has a positional
   artifact and drops as hand number increases.
-- **Full-vocab accuracy** (0.585) is lower than restricted accuracy because it also scores
+- **Full-vocab accuracy** (0.584) is lower than restricted accuracy because it also scores
   guessing who acts next, which is random at the start of each hand.
 
 Full numbers are in `results/`.

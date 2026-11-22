@@ -1,5 +1,5 @@
 #!/bin/bash
-# Oracle CONTROL model (DECISIONS.md D36): same settings as the main model, but every session
+# Oracle CONTROL model (see PROCESS.md): same settings as the main model, but every session
 # starts with its true-style token. 1 epoch, seed 0 -> training/checkpoints/oracle/seed0/.
 # Submit from the repo root, from a committed state:  sbatch training/jobs/train_oracle.sbatch
 #SBATCH -J train-oracle

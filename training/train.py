@@ -1,7 +1,7 @@
 """Train a randomly initialized HookedTransformer on poker sessions (action prediction).
 
-Source of truth: training-specification.md. Interpretations of the spec are logged in
-DECISIONS.md.
+Source of truth: training-specification.md. How the training was carried out is described
+in PROCESS.md.
 
 What this script does:
   - Model: transformer_lens 3.9.0 HookedTransformer built from HookedTransformerConfig

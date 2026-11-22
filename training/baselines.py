@@ -6,7 +6,7 @@ baseline needs are estimated on the training split only. Style labels and knobs 
 loaded. Every result is also broken down by hand number (1-50): the hand that contains the
 predicting position (= number of [HAND] tokens up to and including it).
 
-Two definitions below are still PENDING Gunner's confirmation (see DECISIONS.md), so both
+Two definitions below are still pending team confirmation (see PROCESS.md), so both
 candidate versions of "action frequencies" are reported.
 
 Data-only baselines (no model; run any time):
