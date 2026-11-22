@@ -186,26 +186,4 @@ How the score changes as the session goes on:
 Answering that is the job of **probing**: looking inside the model to see whether the
 opponent's style is stored in its internal activity.
 
----
 
-## Changes from the original plan
-
-- **Trained our own small model** instead of fine-tuning an existing poker language model
-  (TexasHoldEm-Llama-3.2-1B), so that no outside training could explain what the model
-  learns.
-- **Four opponent styles** (tight, loose, bluffer, random) instead of the proposal's
-  game-theory-optimal, tight and aggressive players.
-- **Ran on the Oscar cluster** instead of Colab.
-- **Seeds 1 and 2 started automatically** once seed 0 succeeded, instead of after a manual
-  review, to save time.
-- **Added comparisons beyond the spec:** the legal-moves counting rule, the oracle model
-  and the style-told counting rule.
-- **Main score is the 4-move accuracy** described in Step 8, with the raw score still
-  recorded.
-- **The "current hand only" comparison** restarts each hand at the beginning of the
-  model's window. A second version kept each hand at its original position, but that
-  shows the model a situation it never saw in training, so it was used only as a
-  diagnostic. This choice is pending team confirmation.
-- **A known quirk:** in RLCard, the order of play after the flop differs slightly from
-  standard poker. It is the same for every opponent style, so it shouldn't affect the
-  comparison, but it is worth mentioning in the report.
