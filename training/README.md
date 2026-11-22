@@ -5,8 +5,8 @@ ever learns to predict poker actions. It never sees opponent style labels. The q
 whether it ends up representing the opponent's style on its own. The data pipeline is in
 `data/` at the repo root.
 
-Every interpretation of the spec, judgment call and deviation is logged in
-[`DECISIONS.md`](DECISIONS.md).
+For a plain-language, step-by-step account of how the training was carried out, including
+changes from the original plan, see [`PROCESS.md`](PROCESS.md).
 
 | File | What it is |
 |---|---|
@@ -15,7 +15,7 @@ Every interpretation of the spec, judgment call and deviation is logged in
 | `baselines.py` | All baselines and accuracy by hand number (definitions in its docstring) |
 | `jobs/` | Slurm scripts used on Oscar (set `$VENV` to your environment) |
 | `results/` | Baseline and preflight results (JSON) |
-| `DECISIONS.md` | Decision log |
+| `PROCESS.md` | How the training was carried out, step by step |
 | `training-specification.md` | Training specification |
 
 All commands run from the repo root.
