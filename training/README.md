@@ -154,10 +154,3 @@ python training/baselines.py --ckpt training/checkpoints/seed0/step_008439.pt \
 python training/baselines.py --oracle_ckpt training/checkpoints/oracle/seed0/step_002813.pt \
     --out training/results/baselines_oracle.json
 ```
-
-## Code version
-
-The main runs recorded local commit `e08982f`, and the oracle run recorded `aa1eae2`;
-neither commit is on GitHub. The code here trains the main model the same way. Since those
-commits it has only gained the restricted-accuracy metric, the oracle option, extra
-baselines, and path changes from the move into `training/` (D38).
