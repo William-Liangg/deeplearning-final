@@ -1,0 +1,80 @@
+{
+ "device": "cuda",
+ "data": "data/small",
+ "config": {
+  "n_layers": 6,
+  "d_model": 256,
+  "n_heads": 8,
+  "d_head": 32,
+  "d_mlp": 1024,
+  "act_fn": "gelu",
+  "normalization_type": "LN",
+  "positional_embedding_type": "standard",
+  "attention_dir": "causal",
+  "d_vocab": 68,
+  "n_ctx": 1024,
+  "default_prepend_bos": false,
+  "seed": 0
+ },
+ "params": 5036100,
+ "seconds": 3.7,
+ "1_overfit_tiny_sample": {
+  "pass": true,
+  "sessions": 4,
+  "seq_len": 468,
+  "action_targets": 597,
+  "steps_run": 44,
+  "final_action_loss": 0.021866962937653764,
+  "final_action_acc": 0.9949748743718593,
+  "floor_action_loss": 0.009288404429614008,
+  "best_possible_acc": 0.9949748743718593,
+  "criterion": "loss < floor + 0.02 and acc = best possible",
+  "trace": [
+   {
+    "step": 1,
+    "action_loss": 4.311976432800293,
+    "action_acc": 0.03350083752093802
+   },
+   {
+    "step": 44,
+    "action_loss": 0.023322679102420807,
+    "action_acc": 0.9949748743718593
+   }
+  ]
+ },
+ "2_reload_reproduces_logits": {
+  "pass": true,
+  "max_abs_logit_diff": 0.0,
+  "compared_shape": [
+   2,
+   464,
+   68
+  ]
+ },
+ "3_run_with_cache_activations": {
+  "pass": true,
+  "hooks_checked": 81,
+  "n_cached": 114,
+  "head_results_shape": [
+   48,
+   2,
+   464,
+   256
+  ],
+  "head_sum_vs_attn_out_err": 1.3113021850585938e-06,
+  "cache_vs_forward_logit_diff": 0.0,
+  "problems": []
+ },
+ "4_run_with_hooks_changes_logits": {
+  "pass": true,
+  "hook": "blocks.2.hook_resid_post",
+  "patched_position": 232,
+  "hook_calls": 1,
+  "max_diff_before_t0": 0.0,
+  "max_diff_at_t0": 18.8341121673584,
+  "max_diff_after_t0": 0.01082468032836914,
+  "max_diff_after_hooks_removed": 0.0,
+  "head_ablation_hook": "blocks.2.attn.hook_z[head 0]",
+  "head_ablation_max_diff": 0.37983787059783936
+ }
+}

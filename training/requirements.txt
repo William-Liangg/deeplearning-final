@@ -1,0 +1,5 @@
+# Training, preflight and baselines (Python 3.11). Tested with torch 2.10.0 and numpy 2.4.6.
+torch
+transformer_lens==3.9.0
+rlcard==1.2.0
+numpy
