@@ -1,0 +1,185 @@
+{
+  "question": "After observing 20 hands, can opponent style be identified from the trained model's internal state?",
+  "inputs": {
+    "trained_checkpoint": {
+      "path": "training/checkpoints/seed0/step_008439.pt",
+      "sha256": "194cc085b42d5f0afbf7780a6ed0a93eec13bed8c00278aa5a5b12d1c457e3af",
+      "step": 8439,
+      "epoch": 3.0
+    },
+    "untrained_checkpoint": {
+      "path": "training/checkpoints/seed0/step_000000.pt",
+      "sha256": "b6dc25bc3ce62c0c6d55d79584dc8679bcc74d2f72e548533aa753445708de4c",
+      "step": 0,
+      "epoch": 0.0
+    },
+    "tokens": "data/full/val_tokens.npy",
+    "styles": "data/full/val_styles.npy",
+    "vocabulary": "data/full/vocab.json"
+  },
+  "experiment": {
+    "sessions": 10000,
+    "classifier_fitting_sessions": 7000,
+    "test_sessions": 3000,
+    "completed_hands": 20,
+    "activation_hook": "blocks.5.hook_resid_post",
+    "residual_width": 256,
+    "split_seed": 0,
+    "batch_size": 64,
+    "device": "cpu",
+    "shuffle_repeats": 20,
+    "bootstrap_repeats": 1000,
+    "style_names": [
+      "tight",
+      "loose",
+      "bluffer",
+      "random"
+    ],
+    "chance_balanced_accuracy": 0.25,
+    "classifier": "standardization followed by L2 multinomial logistic regression",
+    "action_count_features": [
+      "fold_count",
+      "check_count",
+      "call_count",
+      "raise_count",
+      "fold_proportion",
+      "check_proportion",
+      "call_proportion",
+      "raise_proportion"
+    ]
+  },
+  "measurements": {
+    "trained_activations": {
+      "balanced_accuracy": 0.9638472617578899,
+      "macro_f1": 0.9638593699574373,
+      "confusion_matrix": [
+        [
+          700,
+          4,
+          35,
+          0
+        ],
+        [
+          6,
+          736,
+          13,
+          0
+        ],
+        [
+          35,
+          13,
+          717,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          738
+        ]
+      ]
+    },
+    "untrained_activations": {
+      "balanced_accuracy": 0.8896599468101779,
+      "macro_f1": 0.8897573998587665,
+      "confusion_matrix": [
+        [
+          646,
+          13,
+          45,
+          35
+        ],
+        [
+          11,
+          724,
+          17,
+          3
+        ],
+        [
+          56,
+          23,
+          651,
+          36
+        ],
+        [
+          24,
+          2,
+          66,
+          648
+        ]
+      ]
+    },
+    "action_counts": {
+      "balanced_accuracy": 0.9041568767473176,
+      "macro_f1": 0.9042176191453776,
+      "confusion_matrix": [
+        [
+          653,
+          5,
+          33,
+          48
+        ],
+        [
+          5,
+          740,
+          7,
+          3
+        ],
+        [
+          37,
+          8,
+          674,
+          47
+        ],
+        [
+          36,
+          1,
+          57,
+          646
+        ]
+      ]
+    },
+    "shuffled_labels": {
+      "repetitions": 20,
+      "balanced_accuracies": [
+        0.24493090419134048,
+        0.29810796560285935,
+        0.28717286310656265,
+        0.2396268282008152,
+        0.21816613244038127,
+        0.19816245966753965,
+        0.297610035151417,
+        0.28020242163509435,
+        0.2530553066527255,
+        0.2237534440038485,
+        0.28689938124394565,
+        0.2420299613982167,
+        0.27936654025255847,
+        0.24487464101993647,
+        0.2286633746790092,
+        0.2348615908091851,
+        0.19906927728685442,
+        0.2283053787568496,
+        0.27848601336476037,
+        0.22277012755159323
+      ],
+      "mean": 0.24930573235077466,
+      "lower_2_5_percentile": 0.19859319803671416,
+      "upper_97_5_percentile": 0.29787144863842424
+    },
+    "trained_minus_action_counts": {
+      "observed_difference": 0.05969038501057233,
+      "confidence_level": 0.95,
+      "lower_bound": 0.04919310584362152,
+      "upper_bound": 0.06934415187735804,
+      "repetitions": 1000
+    }
+  },
+  "software": {
+    "python": "3.11.11",
+    "torch": "2.15.0",
+    "transformer_lens": "3.9.0",
+    "numpy": "2.4.6",
+    "scikit_learn": "1.9.1"
+  }
+}
