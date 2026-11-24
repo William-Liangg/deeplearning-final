@@ -1,0 +1,1397 @@
+{
+  "question": "Does linearly readable opponent style at block 4 contribute to predicting the first opponent action after hand 20?",
+  "inputs": {
+    "checkpoint": {
+      "path": "training/checkpoints/seed0/step_008439.pt",
+      "sha256": "194cc085b42d5f0afbf7780a6ed0a93eec13bed8c00278aa5a5b12d1c457e3af",
+      "step": 8439,
+      "epoch": 3.0
+    },
+    "tokens": "data/full/val_tokens.npy",
+    "styles": "data/full/val_styles.npy",
+    "vocabulary": "data/full/vocab.json"
+  },
+  "experiment": {
+    "sessions": 10000,
+    "classifier_fitting_sessions": 7000,
+    "test_sessions": 3000,
+    "activation_hook": "blocks.4.hook_resid_post",
+    "target": "first opponent action after hand 20",
+    "split_seed": 0,
+    "shuffle_seed": 1,
+    "random_control_seeds": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "bootstrap_seed": 20,
+    "bootstrap_repetitions": 1000,
+    "matching_tolerance": 1e-10,
+    "hook_tolerance": 0.0001,
+    "batch_size": 64,
+    "device": "cpu"
+  },
+  "conditions": {
+    "untouched": {
+      "displacement_scale": 0.0,
+      "fitting_mean_squared_activation_change": 0.0,
+      "held_out_centered_energy_fraction_change": 0.0,
+      "balanced_accuracy": 0.9618522218780508,
+      "macro_f1": 0.9618904196480045,
+      "confusion_matrix": [
+        [
+          699,
+          3,
+          37,
+          0
+        ],
+        [
+          8,
+          738,
+          9,
+          0
+        ],
+        [
+          43,
+          10,
+          713,
+          0
+        ],
+        [
+          2,
+          0,
+          3,
+          735
+        ]
+      ],
+      "mean_squared_activation_change": 0.0,
+      "mean_cosine_similarity": 1.0,
+      "centered_activation_energy_fraction_removed": 0.0,
+      "transformation_rank": 0,
+      "full_vocabulary_cross_entropy": 1.3163998126983643,
+      "correct_action_probability": 0.3350277245044708,
+      "restricted_opponent_action_accuracy": 0.5743333333333334
+    },
+    "true_label_leace": {
+      "displacement_scale": 1.0,
+      "fitting_mean_squared_activation_change": 4.180515229508559,
+      "held_out_centered_energy_fraction_change": -0.08793275209999309,
+      "balanced_accuracy": 0.25,
+      "macro_f1": 0.10169941582580988,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          739,
+          0
+        ],
+        [
+          0,
+          0,
+          755,
+          0
+        ],
+        [
+          0,
+          0,
+          766,
+          0
+        ],
+        [
+          0,
+          0,
+          740,
+          0
+        ]
+      ],
+      "mean_squared_activation_change": 4.20879077713551,
+      "mean_cosine_similarity": 0.9771178364753723,
+      "centered_activation_energy_fraction_removed": 0.08948922957645952,
+      "transformation_rank": 3,
+      "full_vocabulary_cross_entropy": 1.4296393394470215,
+      "correct_action_probability": 0.2834939658641815,
+      "restricted_opponent_action_accuracy": 0.5446666666666666,
+      "loss_increase_over_untouched": {
+        "mean_difference": 0.11323961615562439,
+        "confidence_level": 0.95,
+        "lower_bound": 0.10204975437372923,
+        "upper_bound": 0.1257351640611887,
+        "repetitions": 1000
+      }
+    },
+    "shuffled_label_leace": {
+      "displacement_scale": 1.0,
+      "fitting_mean_squared_activation_change": 0.22751131573318947,
+      "held_out_centered_energy_fraction_change": -0.007662805244627546,
+      "balanced_accuracy": 0.9604804056590371,
+      "macro_f1": 0.9605304670136515,
+      "confusion_matrix": [
+        [
+          694,
+          6,
+          39,
+          0
+        ],
+        [
+          8,
+          739,
+          8,
+          0
+        ],
+        [
+          42,
+          10,
+          714,
+          0
+        ],
+        [
+          3,
+          0,
+          3,
+          734
+        ]
+      ],
+      "mean_squared_activation_change": 0.23440413260069187,
+      "mean_cosine_similarity": 0.9987813830375671,
+      "centered_activation_energy_fraction_removed": 0.00498400760378277,
+      "transformation_rank": 3,
+      "full_vocabulary_cross_entropy": 1.3161712884902954,
+      "correct_action_probability": 0.3348470628261566,
+      "restricted_opponent_action_accuracy": 0.575,
+      "loss_increase_over_untouched": {
+        "mean_difference": -0.0002284721122123301,
+        "confidence_level": 0.95,
+        "lower_bound": -0.0026731326070148498,
+        "upper_bound": 0.0022415560320951035,
+        "repetitions": 1000
+      }
+    },
+    "magnitude_matched_shuffled_displacement": {
+      "displacement_scale": 4.286604385383592,
+      "fitting_mean_squared_activation_change": 4.1805152295085595,
+      "held_out_centered_energy_fraction_change": 0.03736914245165391,
+      "balanced_accuracy": 0.9618288305613392,
+      "macro_f1": 0.9619007845250519,
+      "confusion_matrix": [
+        [
+          698,
+          3,
+          38,
+          0
+        ],
+        [
+          8,
+          738,
+          9,
+          0
+        ],
+        [
+          42,
+          9,
+          715,
+          0
+        ],
+        [
+          3,
+          0,
+          3,
+          734
+        ]
+      ],
+      "mean_squared_activation_change": 4.307170581994851,
+      "mean_cosine_similarity": 0.9788060188293457,
+      "centered_activation_energy_fraction_removed": 0.09158102586877528,
+      "transformation_rank": 3,
+      "full_vocabulary_cross_entropy": 1.3757694959640503,
+      "correct_action_probability": 0.3313237726688385,
+      "restricted_opponent_action_accuracy": 0.5676666666666667,
+      "loss_increase_over_untouched": {
+        "mean_difference": 0.059369850903749466,
+        "confidence_level": 0.95,
+        "lower_bound": 0.04065259657800198,
+        "upper_bound": 0.0805166034027934,
+        "repetitions": 1000
+      }
+    },
+    "random_rank_three": [
+      {
+        "seed": 2,
+        "displacement_scale": 1.0,
+        "fitting_mean_squared_activation_change": 0.9796097691550872,
+        "held_out_centered_energy_fraction_change": -0.02073479974657617,
+        "balanced_accuracy": 0.960844506063768,
+        "macro_f1": 0.9608966911109813,
+        "confusion_matrix": [
+          [
+            697,
+            4,
+            38,
+            0
+          ],
+          [
+            8,
+            737,
+            10,
+            0
+          ],
+          [
+            43,
+            10,
+            713,
+            0
+          ],
+          [
+            2,
+            0,
+            3,
+            735
+          ]
+        ],
+        "mean_squared_activation_change": 0.9751836545266065,
+        "mean_cosine_similarity": 0.9922978281974792,
+        "centered_activation_energy_fraction_removed": 0.020734799746576354,
+        "transformation_rank": 3,
+        "full_vocabulary_cross_entropy": 1.3056360483169556,
+        "correct_action_probability": 0.33764731884002686,
+        "restricted_opponent_action_accuracy": 0.5766666666666667,
+        "loss_increase_over_untouched": {
+          "mean_difference": -0.010763718746602535,
+          "confidence_level": 0.95,
+          "lower_bound": -0.011515887454152107,
+          "upper_bound": -0.010008374880999326,
+          "repetitions": 1000
+        }
+      },
+      {
+        "seed": 3,
+        "displacement_scale": 1.0,
+        "fitting_mean_squared_activation_change": 0.4212298273208378,
+        "held_out_centered_energy_fraction_change": -0.008881164775154748,
+        "balanced_accuracy": 0.9611637076555286,
+        "macro_f1": 0.9612190471079858,
+        "confusion_matrix": [
+          [
+            696,
+            4,
+            39,
+            0
+          ],
+          [
+            8,
+            738,
+            9,
+            0
+          ],
+          [
+            42,
+            10,
+            714,
+            0
+          ],
+          [
+            2,
+            0,
+            3,
+            735
+          ]
+        ],
+        "mean_squared_activation_change": 0.4176923253535895,
+        "mean_cosine_similarity": 0.9976425766944885,
+        "centered_activation_energy_fraction_removed": 0.008881164775154873,
+        "transformation_rank": 3,
+        "full_vocabulary_cross_entropy": 1.3175325393676758,
+        "correct_action_probability": 0.33311375975608826,
+        "restricted_opponent_action_accuracy": 0.575,
+        "loss_increase_over_untouched": {
+          "mean_difference": 0.0011327635729685426,
+          "confidence_level": 0.95,
+          "lower_bound": 6.938014921615834e-05,
+          "upper_bound": 0.002131015295162797,
+          "repetitions": 1000
+        }
+      },
+      {
+        "seed": 4,
+        "displacement_scale": 1.0,
+        "fitting_mean_squared_activation_change": 0.08994740735957076,
+        "held_out_centered_energy_fraction_change": -0.001899803063336003,
+        "balanced_accuracy": 0.9615210960502363,
+        "macro_f1": 0.9615684067470742,
+        "confusion_matrix": [
+          [
+            699,
+            3,
+            37,
+            0
+          ],
+          [
+            8,
+            737,
+            10,
+            0
+          ],
+          [
+            43,
+            10,
+            713,
+            0
+          ],
+          [
+            2,
+            0,
+            3,
+            735
+          ]
+        ],
+        "mean_squared_activation_change": 0.08935012234641321,
+        "mean_cosine_similarity": 0.9993588924407959,
+        "centered_activation_energy_fraction_removed": 0.0018998030633361359,
+        "transformation_rank": 3,
+        "full_vocabulary_cross_entropy": 1.3164705038070679,
+        "correct_action_probability": 0.3348265290260315,
+        "restricted_opponent_action_accuracy": 0.5756666666666667,
+        "loss_increase_over_untouched": {
+          "mean_difference": 7.083122909534723e-05,
+          "confidence_level": 0.95,
+          "lower_bound": -0.0001641175065742573,
+          "upper_bound": 0.00030567733847419726,
+          "repetitions": 1000
+        }
+      },
+      {
+        "seed": 5,
+        "displacement_scale": 1.0,
+        "fitting_mean_squared_activation_change": 0.23611370160954648,
+        "held_out_centered_energy_fraction_change": -0.004959133710077298,
+        "balanced_accuracy": 0.9618474668074164,
+        "macro_f1": 0.9619001324343468,
+        "confusion_matrix": [
+          [
+            699,
+            3,
+            37,
+            0
+          ],
+          [
+            8,
+            737,
+            10,
+            0
+          ],
+          [
+            42,
+            10,
+            714,
+            0
+          ],
+          [
+            2,
+            0,
+            3,
+            735
+          ]
+        ],
+        "mean_squared_activation_change": 0.23323428216267034,
+        "mean_cosine_similarity": 0.9979628920555115,
+        "centered_activation_energy_fraction_removed": 0.00495913371007749,
+        "transformation_rank": 3,
+        "full_vocabulary_cross_entropy": 1.3162440061569214,
+        "correct_action_probability": 0.3344462811946869,
+        "restricted_opponent_action_accuracy": 0.5763333333333334,
+        "loss_increase_over_untouched": {
+          "mean_difference": -0.0001558070507599041,
+          "confidence_level": 0.95,
+          "lower_bound": -0.0005126546850078739,
+          "upper_bound": 0.0001908420967083657,
+          "repetitions": 1000
+        }
+      },
+      {
+        "seed": 6,
+        "displacement_scale": 1.0,
+        "fitting_mean_squared_activation_change": 0.4939636711709375,
+        "held_out_centered_energy_fraction_change": -0.01065907263552751,
+        "balanced_accuracy": 0.9618402976419969,
+        "macro_f1": 0.9618912896448188,
+        "confusion_matrix": [
+          [
+            698,
+            3,
+            38,
+            0
+          ],
+          [
+            8,
+            738,
+            9,
+            0
+          ],
+          [
+            42,
+            10,
+            714,
+            0
+          ],
+          [
+            2,
+            0,
+            3,
+            735
+          ]
+        ],
+        "mean_squared_activation_change": 0.5013095633245518,
+        "mean_cosine_similarity": 0.9954148530960083,
+        "centered_activation_energy_fraction_removed": 0.010659072635527464,
+        "transformation_rank": 3,
+        "full_vocabulary_cross_entropy": 1.3190616369247437,
+        "correct_action_probability": 0.3336499035358429,
+        "restricted_opponent_action_accuracy": 0.577,
+        "loss_increase_over_untouched": {
+          "mean_difference": 0.0026618237607181072,
+          "confidence_level": 0.95,
+          "lower_bound": 0.0020071014296263456,
+          "upper_bound": 0.003319330170052126,
+          "repetitions": 1000
+        }
+      },
+      {
+        "seed": 7,
+        "displacement_scale": 1.0,
+        "fitting_mean_squared_activation_change": 0.3813745022841721,
+        "held_out_centered_energy_fraction_change": -0.0081127844205758,
+        "balanced_accuracy": 0.9605133802359536,
+        "macro_f1": 0.9605654900219172,
+        "confusion_matrix": [
+          [
+            697,
+            4,
+            38,
+            0
+          ],
+          [
+            10,
+            736,
+            9,
+            0
+          ],
+          [
+            43,
+            10,
+            713,
+            0
+          ],
+          [
+            2,
+            0,
+            3,
+            735
+          ]
+        ],
+        "mean_squared_activation_change": 0.38155443295032926,
+        "mean_cosine_similarity": 0.9965909123420715,
+        "centered_activation_energy_fraction_removed": 0.008112784420575744,
+        "transformation_rank": 3,
+        "full_vocabulary_cross_entropy": 1.3089674711227417,
+        "correct_action_probability": 0.33709782361984253,
+        "restricted_opponent_action_accuracy": 0.5756666666666667,
+        "loss_increase_over_untouched": {
+          "mean_difference": -0.007432256825268269,
+          "confidence_level": 0.95,
+          "lower_bound": -0.007882346119731664,
+          "upper_bound": -0.007011269498616457,
+          "repetitions": 1000
+        }
+      },
+      {
+        "seed": 8,
+        "displacement_scale": 1.0,
+        "fitting_mean_squared_activation_change": 0.3052747981558666,
+        "held_out_centered_energy_fraction_change": -0.0065490144628992985,
+        "balanced_accuracy": 0.9604990419051145,
+        "macro_f1": 0.9605460358428155,
+        "confusion_matrix": [
+          [
+            695,
+            5,
+            39,
+            0
+          ],
+          [
+            8,
+            738,
+            9,
+            0
+          ],
+          [
+            43,
+            10,
+            713,
+            0
+          ],
+          [
+            2,
+            0,
+            3,
+            735
+          ]
+        ],
+        "mean_squared_activation_change": 0.308008369289043,
+        "mean_cosine_similarity": 0.9977386593818665,
+        "centered_activation_energy_fraction_removed": 0.006549014462899409,
+        "transformation_rank": 3,
+        "full_vocabulary_cross_entropy": 1.3168010711669922,
+        "correct_action_probability": 0.33501172065734863,
+        "restricted_opponent_action_accuracy": 0.5756666666666667,
+        "loss_increase_over_untouched": {
+          "mean_difference": 0.0004013323050457984,
+          "confidence_level": 0.95,
+          "lower_bound": 0.00021772812906419858,
+          "upper_bound": 0.0005768841423559933,
+          "repetitions": 1000
+        }
+      },
+      {
+        "seed": 9,
+        "displacement_scale": 1.0,
+        "fitting_mean_squared_activation_change": 0.17433250573526035,
+        "held_out_centered_energy_fraction_change": -0.0037375132789447332,
+        "balanced_accuracy": 0.9611756318915825,
+        "macro_f1": 0.9612185000087339,
+        "confusion_matrix": [
+          [
+            697,
+            4,
+            38,
+            0
+          ],
+          [
+            8,
+            738,
+            9,
+            0
+          ],
+          [
+            43,
+            10,
+            713,
+            0
+          ],
+          [
+            2,
+            0,
+            3,
+            735
+          ]
+        ],
+        "mean_squared_activation_change": 0.1757799401368595,
+        "mean_cosine_similarity": 0.9985140562057495,
+        "centered_activation_energy_fraction_removed": 0.003737513278944647,
+        "transformation_rank": 3,
+        "full_vocabulary_cross_entropy": 1.3159252405166626,
+        "correct_action_probability": 0.3347419500350952,
+        "restricted_opponent_action_accuracy": 0.5736666666666667,
+        "loss_increase_over_untouched": {
+          "mean_difference": -0.0004744844336528331,
+          "confidence_level": 0.95,
+          "lower_bound": -0.0008557588123949244,
+          "upper_bound": -9.106496490858266e-05,
+          "repetitions": 1000
+        }
+      },
+      {
+        "seed": 10,
+        "displacement_scale": 1.0,
+        "fitting_mean_squared_activation_change": 0.49044849089082193,
+        "held_out_centered_energy_fraction_change": -0.01037910027511864,
+        "balanced_accuracy": 0.9615139268848167,
+        "macro_f1": 0.9615595780146013,
+        "confusion_matrix": [
+          [
+            698,
+            3,
+            38,
+            0
+          ],
+          [
+            8,
+            738,
+            9,
+            0
+          ],
+          [
+            43,
+            10,
+            713,
+            0
+          ],
+          [
+            2,
+            0,
+            3,
+            735
+          ]
+        ],
+        "mean_squared_activation_change": 0.4881421118455457,
+        "mean_cosine_similarity": 0.9961321353912354,
+        "centered_activation_energy_fraction_removed": 0.010379100275118604,
+        "transformation_rank": 3,
+        "full_vocabulary_cross_entropy": 1.3120648860931396,
+        "correct_action_probability": 0.33522313833236694,
+        "restricted_opponent_action_accuracy": 0.5756666666666667,
+        "loss_increase_over_untouched": {
+          "mean_difference": -0.004334824159741402,
+          "confidence_level": 0.95,
+          "lower_bound": -0.005008089204784483,
+          "upper_bound": -0.003648946521570906,
+          "repetitions": 1000
+        }
+      },
+      {
+        "seed": 11,
+        "displacement_scale": 1.0,
+        "fitting_mean_squared_activation_change": 0.26678990154037513,
+        "held_out_centered_energy_fraction_change": -0.0056267631982525445,
+        "balanced_accuracy": 0.960844506063768,
+        "macro_f1": 0.9609070820617958,
+        "confusion_matrix": [
+          [
+            697,
+            3,
+            39,
+            0
+          ],
+          [
+            8,
+            737,
+            10,
+            0
+          ],
+          [
+            43,
+            10,
+            713,
+            0
+          ],
+          [
+            2,
+            0,
+            3,
+            735
+          ]
+        ],
+        "mean_squared_activation_change": 0.26463373487530284,
+        "mean_cosine_similarity": 0.9978529214859009,
+        "centered_activation_energy_fraction_removed": 0.005626763198252802,
+        "transformation_rank": 3,
+        "full_vocabulary_cross_entropy": 1.3203985691070557,
+        "correct_action_probability": 0.33312633633613586,
+        "restricted_opponent_action_accuracy": 0.5736666666666667,
+        "loss_increase_over_untouched": {
+          "mean_difference": 0.003998852334916592,
+          "confidence_level": 0.95,
+          "lower_bound": 0.0033908498822711407,
+          "upper_bound": 0.004577192955184728,
+          "repetitions": 1000
+        }
+      }
+    ],
+    "magnitude_matched_random_rank_three": [
+      {
+        "seed": 2,
+        "displacement_scale": 2.065800371602012,
+        "fitting_mean_squared_activation_change": 4.180515229508558,
+        "held_out_centered_energy_fraction_change": 0.0028184902892040365,
+        "balanced_accuracy": 0.9615210960502363,
+        "macro_f1": 0.9615584143359195,
+        "confusion_matrix": [
+          [
+            699,
+            4,
+            36,
+            0
+          ],
+          [
+            8,
+            737,
+            10,
+            0
+          ],
+          [
+            43,
+            10,
+            713,
+            0
+          ],
+          [
+            2,
+            0,
+            3,
+            735
+          ]
+        ],
+        "mean_squared_activation_change": 4.161626647346017,
+        "mean_cosine_similarity": 0.9691017270088196,
+        "centered_activation_energy_fraction_removed": 0.08848640433234546,
+        "transformation_rank": 3,
+        "full_vocabulary_cross_entropy": 1.2948342561721802,
+        "correct_action_probability": 0.34039968252182007,
+        "restricted_opponent_action_accuracy": 0.5766666666666667,
+        "loss_increase_over_untouched": {
+          "mean_difference": -0.021565403789281845,
+          "confidence_level": 0.95,
+          "lower_bound": -0.02321363869123161,
+          "upper_bound": -0.01989248055033386,
+          "repetitions": 1000
+        }
+      },
+      {
+        "seed": 3,
+        "displacement_scale": 3.1503249078205364,
+        "fitting_mean_squared_activation_change": 4.180515229508559,
+        "held_out_centered_energy_fraction_change": 0.032184428243070516,
+        "balanced_accuracy": 0.9604990419051145,
+        "macro_f1": 0.9605511059091183,
+        "confusion_matrix": [
+          [
+            695,
+            4,
+            40,
+            0
+          ],
+          [
+            8,
+            738,
+            9,
+            0
+          ],
+          [
+            42,
+            11,
+            713,
+            0
+          ],
+          [
+            2,
+            0,
+            3,
+            735
+          ]
+        ],
+        "mean_squared_activation_change": 4.1454071248841595,
+        "mean_cosine_similarity": 0.9771041870117188,
+        "centered_activation_energy_fraction_removed": 0.08814153744632802,
+        "transformation_rank": 3,
+        "full_vocabulary_cross_entropy": 1.3226934671401978,
+        "correct_action_probability": 0.3289554715156555,
+        "restricted_opponent_action_accuracy": 0.5773333333333334,
+        "loss_increase_over_untouched": {
+          "mean_difference": 0.006293723359704018,
+          "confidence_level": 0.95,
+          "lower_bound": 0.0030090980522800236,
+          "upper_bound": 0.00965230744332075,
+          "repetitions": 1000
+        }
+      },
+      {
+        "seed": 4,
+        "displacement_scale": 6.817428315193325,
+        "fitting_mean_squared_activation_change": 4.180515229508558,
+        "held_out_centered_energy_fraction_change": 0.06239422929767633,
+        "balanced_accuracy": 0.9608330389831103,
+        "macro_f1": 0.9608857440030688,
+        "confusion_matrix": [
+          [
+            697,
+            4,
+            37,
+            1
+          ],
+          [
+            9,
+            737,
+            9,
+            0
+          ],
+          [
+            43,
+            9,
+            714,
+            0
+          ],
+          [
+            3,
+            0,
+            3,
+            734
+          ]
+        ],
+        "mean_squared_activation_change": 4.1527550175451315,
+        "mean_cosine_similarity": 0.9719797968864441,
+        "centered_activation_energy_fraction_removed": 0.08829777169223377,
+        "transformation_rank": 3,
+        "full_vocabulary_cross_entropy": 1.3174771070480347,
+        "correct_action_probability": 0.3338245451450348,
+        "restricted_opponent_action_accuracy": 0.5776666666666667,
+        "loss_increase_over_untouched": {
+          "mean_difference": 0.001077356282621622,
+          "confidence_level": 0.95,
+          "lower_bound": -0.00044445397943491114,
+          "upper_bound": 0.002709644811693579,
+          "repetitions": 1000
+        }
+      },
+      {
+        "seed": 5,
+        "displacement_scale": 4.207792450179194,
+        "fitting_mean_squared_activation_change": 4.1805152295085595,
+        "held_out_centered_energy_fraction_change": 0.0460700169461743,
+        "balanced_accuracy": 0.9615020026487628,
+        "macro_f1": 0.9615554938086872,
+        "confusion_matrix": [
+          [
+            697,
+            3,
+            39,
+            0
+          ],
+          [
+            9,
+            738,
+            8,
+            0
+          ],
+          [
+            42,
+            10,
+            714,
+            0
+          ],
+          [
+            2,
+            0,
+            3,
+            735
+          ]
+        ],
+        "mean_squared_activation_change": 4.129533618667038,
+        "mean_cosine_similarity": 0.9677133560180664,
+        "centered_activation_energy_fraction_removed": 0.0878040277155606,
+        "transformation_rank": 3,
+        "full_vocabulary_cross_entropy": 1.3163785934448242,
+        "correct_action_probability": 0.3327624797821045,
+        "restricted_opponent_action_accuracy": 0.5746666666666667,
+        "loss_increase_over_untouched": {
+          "mean_difference": -2.1169493265915662e-05,
+          "confidence_level": 0.95,
+          "lower_bound": -0.0015743797499453648,
+          "upper_bound": 0.001466880895895883,
+          "repetitions": 1000
+        }
+      },
+      {
+        "seed": 6,
+        "displacement_scale": 2.909158610568415,
+        "fitting_mean_squared_activation_change": 4.180515229508559,
+        "held_out_centered_energy_fraction_change": 0.028192038385411122,
+        "balanced_accuracy": 0.961828373405943,
+        "macro_f1": 0.9618920463417264,
+        "confusion_matrix": [
+          [
+            697,
+            3,
+            39,
+            0
+          ],
+          [
+            8,
+            738,
+            9,
+            0
+          ],
+          [
+            41,
+            10,
+            715,
+            0
+          ],
+          [
+            2,
+            0,
+            3,
+            735
+          ]
+        ],
+        "mean_squared_activation_change": 4.242685012054946,
+        "mean_cosine_similarity": 0.9653308987617493,
+        "centered_activation_energy_fraction_removed": 0.09020990426204896,
+        "transformation_rank": 3,
+        "full_vocabulary_cross_entropy": 1.3259756565093994,
+        "correct_action_probability": 0.3303402066230774,
+        "restricted_opponent_action_accuracy": 0.5723333333333334,
+        "loss_increase_over_untouched": {
+          "mean_difference": 0.009575892239809036,
+          "confidence_level": 0.95,
+          "lower_bound": 0.007205096643883735,
+          "upper_bound": 0.011917520593851805,
+          "repetitions": 1000
+        }
+      },
+      {
+        "seed": 7,
+        "displacement_scale": 3.3108467430864863,
+        "fitting_mean_squared_activation_change": 4.180515229508559,
+        "held_out_centered_energy_fraction_change": 0.035209587174548584,
+        "balanced_accuracy": 0.9605109661411684,
+        "macro_f1": 0.960561425956626,
+        "confusion_matrix": [
+          [
+            696,
+            3,
+            40,
+            0
+          ],
+          [
+            9,
+            738,
+            8,
+            0
+          ],
+          [
+            44,
+            10,
+            712,
+            0
+          ],
+          [
+            2,
+            0,
+            3,
+            735
+          ]
+        ],
+        "mean_squared_activation_change": 4.182487576599464,
+        "mean_cosine_similarity": 0.9651685953140259,
+        "centered_activation_energy_fraction_removed": 0.08892995892700045,
+        "transformation_rank": 3,
+        "full_vocabulary_cross_entropy": 1.2927019596099854,
+        "correct_action_probability": 0.34192293882369995,
+        "restricted_opponent_action_accuracy": 0.5753333333333334,
+        "loss_increase_over_untouched": {
+          "mean_difference": -0.02369777485728264,
+          "confidence_level": 0.95,
+          "lower_bound": -0.025345971016213296,
+          "upper_bound": -0.022081833519041538,
+          "repetitions": 1000
+        }
+      },
+      {
+        "seed": 8,
+        "displacement_scale": 3.700576857831601,
+        "fitting_mean_squared_activation_change": 4.180515229508558,
+        "held_out_centered_energy_fraction_change": 0.04121370354244382,
+        "balanced_accuracy": 0.96082065759166,
+        "macro_f1": 0.9609141228042637,
+        "confusion_matrix": [
+          [
+            695,
+            3,
+            41,
+            0
+          ],
+          [
+            8,
+            737,
+            10,
+            0
+          ],
+          [
+            42,
+            9,
+            715,
+            0
+          ],
+          [
+            2,
+            0,
+            3,
+            735
+          ]
+        ],
+        "mean_squared_activation_change": 4.217949488157562,
+        "mean_cosine_similarity": 0.9720084071159363,
+        "centered_activation_energy_fraction_removed": 0.08968396626846366,
+        "transformation_rank": 3,
+        "full_vocabulary_cross_entropy": 1.3180153369903564,
+        "correct_action_probability": 0.3351421356201172,
+        "restricted_opponent_action_accuracy": 0.5746666666666667,
+        "loss_increase_over_untouched": {
+          "mean_difference": 0.0016155354678630829,
+          "confidence_level": 0.95,
+          "lower_bound": 0.0009109827675274573,
+          "upper_bound": 0.0024646189296618102,
+          "repetitions": 1000
+        }
+      },
+      {
+        "seed": 9,
+        "displacement_scale": 4.8969505526976045,
+        "fitting_mean_squared_activation_change": 4.1805152295085595,
+        "held_out_centered_energy_fraction_change": 0.05302119912108918,
+        "balanced_accuracy": 0.9611760890469789,
+        "macro_f1": 0.9612127234636998,
+        "confusion_matrix": [
+          [
+            698,
+            4,
+            37,
+            0
+          ],
+          [
+            9,
+            738,
+            8,
+            0
+          ],
+          [
+            42,
+            11,
+            713,
+            0
+          ],
+          [
+            3,
+            0,
+            3,
+            734
+          ]
+        ],
+        "mean_squared_activation_change": 4.2152248869765065,
+        "mean_cosine_similarity": 0.968760073184967,
+        "centered_activation_energy_fraction_removed": 0.08962603455517432,
+        "transformation_rank": 3,
+        "full_vocabulary_cross_entropy": 1.3154746294021606,
+        "correct_action_probability": 0.3334135413169861,
+        "restricted_opponent_action_accuracy": 0.5776666666666667,
+        "loss_increase_over_untouched": {
+          "mean_difference": -0.0009251604788005352,
+          "confidence_level": 0.95,
+          "lower_bound": -0.0029897625907324256,
+          "upper_bound": 0.0010931351047474887,
+          "repetitions": 1000
+        }
+      },
+      {
+        "seed": 10,
+        "displacement_scale": 2.919565369900449,
+        "fitting_mean_squared_activation_change": 4.180515229508559,
+        "held_out_centered_energy_fraction_change": 0.027865094433283735,
+        "balanced_accuracy": 0.9601798403133537,
+        "macro_f1": 0.9602340978892288,
+        "confusion_matrix": [
+          [
+            696,
+            4,
+            39,
+            0
+          ],
+          [
+            8,
+            737,
+            10,
+            0
+          ],
+          [
+            44,
+            10,
+            712,
+            0
+          ],
+          [
+            2,
+            0,
+            3,
+            735
+          ]
+        ],
+        "mean_squared_activation_change": 4.160855972924276,
+        "mean_cosine_similarity": 0.9698002934455872,
+        "centered_activation_energy_fraction_removed": 0.0884700179012046,
+        "transformation_rank": 3,
+        "full_vocabulary_cross_entropy": 1.3055031299591064,
+        "correct_action_probability": 0.3351145088672638,
+        "restricted_opponent_action_accuracy": 0.5733333333333334,
+        "loss_increase_over_untouched": {
+          "mean_difference": -0.01089664176106453,
+          "confidence_level": 0.95,
+          "lower_bound": -0.01332170853856951,
+          "upper_bound": -0.008583717071451247,
+          "repetitions": 1000
+        }
+      },
+      {
+        "seed": 11,
+        "displacement_scale": 3.9584960103989406,
+        "fitting_mean_squared_activation_change": 4.1805152295085595,
+        "held_out_centered_energy_fraction_change": 0.04362259941465163,
+        "balanced_accuracy": 0.9611756318915825,
+        "macro_f1": 0.961223400016479,
+        "confusion_matrix": [
+          [
+            697,
+            3,
+            39,
+            0
+          ],
+          [
+            8,
+            738,
+            9,
+            0
+          ],
+          [
+            42,
+            11,
+            713,
+            0
+          ],
+          [
+            2,
+            0,
+            3,
+            735
+          ]
+        ],
+        "mean_squared_activation_change": 4.146728764846105,
+        "mean_cosine_similarity": 0.9711089134216309,
+        "centered_activation_energy_fraction_removed": 0.08816963875813817,
+        "transformation_rank": 3,
+        "full_vocabulary_cross_entropy": 1.335106611251831,
+        "correct_action_probability": 0.32620352506637573,
+        "restricted_opponent_action_accuracy": 0.5773333333333334,
+        "loss_increase_over_untouched": {
+          "mean_difference": 0.018706869333982468,
+          "confidence_level": 0.95,
+          "lower_bound": 0.015882666502147914,
+          "upper_bound": 0.021174918487668035,
+          "repetitions": 1000
+        }
+      }
+    ]
+  },
+  "paired_loss_comparisons": {
+    "true_leace_minus_ordinary_controls": [
+      {
+        "condition": "shuffled_label_leace",
+        "mean_difference": 0.11346808075904846,
+        "confidence_level": 0.95,
+        "lower_bound": 0.10172824170440435,
+        "upper_bound": 0.1265175722539425,
+        "repetitions": 1000
+      },
+      {
+        "condition": "random_rank_three_seed2",
+        "mean_difference": 0.1240033283829689,
+        "confidence_level": 0.95,
+        "lower_bound": 0.11161147374659777,
+        "upper_bound": 0.13634546138346196,
+        "repetitions": 1000
+      },
+      {
+        "condition": "random_rank_three_seed3",
+        "mean_difference": 0.11210684478282928,
+        "confidence_level": 0.95,
+        "lower_bound": 0.09997093565762043,
+        "upper_bound": 0.12347441483289004,
+        "repetitions": 1000
+      },
+      {
+        "condition": "random_rank_three_seed4",
+        "mean_difference": 0.11316877603530884,
+        "confidence_level": 0.95,
+        "lower_bound": 0.10007669758051634,
+        "upper_bound": 0.12538978196680545,
+        "repetitions": 1000
+      },
+      {
+        "condition": "random_rank_three_seed5",
+        "mean_difference": 0.11339541524648666,
+        "confidence_level": 0.95,
+        "lower_bound": 0.10008026696741582,
+        "upper_bound": 0.12614204548299313,
+        "repetitions": 1000
+      },
+      {
+        "condition": "random_rank_three_seed6",
+        "mean_difference": 0.1105777770280838,
+        "confidence_level": 0.95,
+        "lower_bound": 0.09812953118234873,
+        "upper_bound": 0.122421252168715,
+        "repetitions": 1000
+      },
+      {
+        "condition": "random_rank_three_seed7",
+        "mean_difference": 0.12067186832427979,
+        "confidence_level": 0.95,
+        "lower_bound": 0.10870016813278198,
+        "upper_bound": 0.13220146261155605,
+        "repetitions": 1000
+      },
+      {
+        "condition": "random_rank_three_seed8",
+        "mean_difference": 0.1128382757306099,
+        "confidence_level": 0.95,
+        "lower_bound": 0.10015997216105461,
+        "upper_bound": 0.12493303455412388,
+        "repetitions": 1000
+      },
+      {
+        "condition": "random_rank_three_seed9",
+        "mean_difference": 0.11371409147977829,
+        "confidence_level": 0.95,
+        "lower_bound": 0.10087568741291761,
+        "upper_bound": 0.1261325355619192,
+        "repetitions": 1000
+      },
+      {
+        "condition": "random_rank_three_seed10",
+        "mean_difference": 0.11757443100214005,
+        "confidence_level": 0.95,
+        "lower_bound": 0.10489043053239584,
+        "upper_bound": 0.13007371723651887,
+        "repetitions": 1000
+      },
+      {
+        "condition": "random_rank_three_seed11",
+        "mean_difference": 0.10924075543880463,
+        "confidence_level": 0.95,
+        "lower_bound": 0.09660128578543663,
+        "upper_bound": 0.12107146475464105,
+        "repetitions": 1000
+      }
+    ],
+    "true_leace_minus_magnitude_matched_controls": [
+      {
+        "condition": "magnitude_matched_shuffled_displacement",
+        "mean_difference": 0.05386975780129433,
+        "confidence_level": 0.95,
+        "lower_bound": 0.028790466580539943,
+        "upper_bound": 0.07671784050762653,
+        "repetitions": 1000
+      },
+      {
+        "condition": "magnitude_matched_random_seed2",
+        "mean_difference": 0.13480500876903534,
+        "confidence_level": 0.95,
+        "lower_bound": 0.12109734881669283,
+        "upper_bound": 0.1474929340183735,
+        "repetitions": 1000
+      },
+      {
+        "condition": "magnitude_matched_random_seed3",
+        "mean_difference": 0.10694587975740433,
+        "confidence_level": 0.95,
+        "lower_bound": 0.0961289256811142,
+        "upper_bound": 0.11806389410048723,
+        "repetitions": 1000
+      },
+      {
+        "condition": "magnitude_matched_random_seed4",
+        "mean_difference": 0.11216225475072861,
+        "confidence_level": 0.95,
+        "lower_bound": 0.10032719820737838,
+        "upper_bound": 0.12436239477246999,
+        "repetitions": 1000
+      },
+      {
+        "condition": "magnitude_matched_random_seed5",
+        "mean_difference": 0.11326078325510025,
+        "confidence_level": 0.95,
+        "lower_bound": 0.10118268616497517,
+        "upper_bound": 0.1254605833441019,
+        "repetitions": 1000
+      },
+      {
+        "condition": "magnitude_matched_random_seed6",
+        "mean_difference": 0.10366372019052505,
+        "confidence_level": 0.95,
+        "lower_bound": 0.09190125726163387,
+        "upper_bound": 0.11662886757403612,
+        "repetitions": 1000
+      },
+      {
+        "condition": "magnitude_matched_random_seed7",
+        "mean_difference": 0.13693737983703613,
+        "confidence_level": 0.95,
+        "lower_bound": 0.1237756997346878,
+        "upper_bound": 0.15043418258428573,
+        "repetitions": 1000
+      },
+      {
+        "condition": "magnitude_matched_random_seed8",
+        "mean_difference": 0.1116240844130516,
+        "confidence_level": 0.95,
+        "lower_bound": 0.09865300003439188,
+        "upper_bound": 0.12436188030987977,
+        "repetitions": 1000
+      },
+      {
+        "condition": "magnitude_matched_random_seed9",
+        "mean_difference": 0.11416477710008621,
+        "confidence_level": 0.95,
+        "lower_bound": 0.10304190162569285,
+        "upper_bound": 0.1252907022833824,
+        "repetitions": 1000
+      },
+      {
+        "condition": "magnitude_matched_random_seed10",
+        "mean_difference": 0.12413625419139862,
+        "confidence_level": 0.95,
+        "lower_bound": 0.11222589183598757,
+        "upper_bound": 0.1364970590919256,
+        "repetitions": 1000
+      },
+      {
+        "condition": "magnitude_matched_random_seed11",
+        "mean_difference": 0.09453273564577103,
+        "confidence_level": 0.95,
+        "lower_bound": 0.08264350574463605,
+        "upper_bound": 0.10631731003522873,
+        "repetitions": 1000
+      }
+    ]
+  },
+  "validation": {
+    "maximum_fitting_class_mean_separation_before": 68.93765258789062,
+    "maximum_fitting_class_mean_separation_after": 1.025016819550047e-12,
+    "maximum_deterministic_transform_difference": 0.0,
+    "maximum_idempotence_difference": 1.3145040611561853e-13,
+    "maximum_hook_offline_difference": 1.5112001906736339e-05,
+    "reference_fitting_mean_squared_activation_change": 4.180515229508559,
+    "numerical_tolerance": 1e-08,
+    "magnitude_matching_tolerance": 1e-10,
+    "hook_tolerance": 0.0001,
+    "all_values_finite": true
+  },
+  "decision": {
+    "style_balanced_accuracy_at_most_30_percent": true,
+    "style_loss_increase_interval_above_zero": true,
+    "style_loss_exceeds_every_ordinary_control": true,
+    "style_loss_exceeds_every_magnitude_matched_control": true,
+    "style_specific_behavioral_evidence": true
+  },
+  "software": {
+    "python": "3.11.11",
+    "torch": "2.15.0",
+    "transformer_lens": "3.9.0",
+    "numpy": "2.4.6",
+    "scikit_learn": "1.9.1",
+    "concept_erasure": "0.2.4"
+  }
+}

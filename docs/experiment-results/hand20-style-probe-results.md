@@ -43,4 +43,4 @@ Those questions require another experiment.
 
 ## Detailed measurements
 
-The complete measurements are in [`opponent_style_probing/measurements/hand20_seed0.json`](../opponent_style_probing/measurements/hand20_seed0.json).
+The complete measurements are in [`opponent_style_probing/measurements/hand20_seed0.json`](../../opponent_style_probing/measurements/hand20_seed0.json).
